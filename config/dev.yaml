@@ -1,4 +1,5 @@
-BASE_URL = "https://example.com"
-HEADLESS = True       # mit -v HEADLESS:False überschreibbar
-BROWSER = "chromium"  # chromium|webkit|firefox
-DEFAULT_TIMEOUT = "10s"
+BASE_URL: "https://sapui5.hana.ondemand.com/#/demoapps"
+WORKLIST_URL: "https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/orderbrowser/webapp/test/mockServer.html?sap-ui-theme=sap_horizon"
+HEADLESS: false
+BROWSER: "chromium"
+DEFAULT_TIMEOUT: "10s"
