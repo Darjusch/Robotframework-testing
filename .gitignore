@@ -1,0 +1,33 @@
+# --- Python ---
+venv/
+.env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# --- Robot Framework outputs ---
+output.xml
+log.html
+report.html
+results/
+rfbrowser.log
+playwright-report/
+traces/
+trace.zip
+*.log
+
+# --- Node/Playwright (if any local use) ---
+node_modules/
+
+# --- OS/IDE ---
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,4 @@
+BASE_URL = "https://example.com"
+HEADLESS = True       # mit -v HEADLESS:False überschreibbar
+BROWSER = "chromium"  # chromium|webkit|firefox
+DEFAULT_TIMEOUT = "10s"
