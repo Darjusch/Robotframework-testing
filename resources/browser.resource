@@ -1,12 +1,14 @@
 *** Settings ***
 Library    Browser
+Variables   ../config/dev.yaml
+
 
 *** Keywords ***
-Open Browser To Base URL
-    # Uses variables from your YAML: ${BROWSER}, ${HEADLESS}, ${BASE_URL}
+#TODO Refactor to use url input
+Open Browser To Worklist URL
     New Browser    ${BROWSER}    headless=${HEADLESS}
     New Context    viewport={'width':1280,'height':800}
-    New Page       ${BASE_URL}
+    New Page       ${WORKLIST_URL}
 
 Close Browser Session
     Close Browser
