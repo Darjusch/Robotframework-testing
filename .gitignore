@@ -25,7 +25,7 @@ trace.zip
 *.log
 *.xml
 *.txt
-
+*.webm
 *.yaml
 
 # --- Node/Playwright (if any local use) ---
