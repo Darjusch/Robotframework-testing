@@ -1,4 +1,0 @@
-*** Test Cases ***;${order_id};${customer};${status};${shipped_text};${secondary_date}
-7991;Berglunds snabbköp;In time;"Shipped: Nov 25, 2016";9/18/16
-7918;Tortuga Restaurante;Urgent;"Shipped: Sep 26, 2016";10/6/16
-7375;Around the Horn;In time;"Shipped: Oct 14, 2016";11/21/16

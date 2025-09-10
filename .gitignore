@@ -23,6 +23,10 @@ playwright-report/
 traces/
 trace.zip
 *.log
+*.xml
+*.txt
+
+*.yaml
 
 # --- Node/Playwright (if any local use) ---
 node_modules/
