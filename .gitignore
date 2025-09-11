@@ -26,6 +26,7 @@ trace.zip
 *.xml
 *.txt
 *.webm
+playwright-log.txt
 
 
 # --- Node/Playwright (if any local use) ---

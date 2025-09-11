@@ -1,6 +1,7 @@
 *** Settings ***
 Library            Browser
 Variables          ../locators/order_overview_page.yaml
+Variables          ../locators/searchbar.yaml
 
 *** Keywords ***
 Wait for page elements to load
