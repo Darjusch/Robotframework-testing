@@ -37,7 +37,6 @@ Get order count from title
 
 Get displayed order items count
     [Documentation]    Get the actual number of order items displayed in the list
-    RETURN    Number of displayed order items
     ${item_count}=    Browser.Get Element Count    ${list of orders} >> .sapMLIB
     RETURN    ${item_count}
 

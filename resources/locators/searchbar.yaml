@@ -1,4 +1,4 @@
 # Searchbar
 order searchbar input field: css=input[placeholder*="Search"] # Search input field
-reset searchbar button: css=button[title*="Reset"] # Reset search button
+reset searchbar button: css=div[id$="--searchField-reset"] # Reset search button
 no_matching_orders_banner: role=heading[name*="No matching order"]

@@ -8,19 +8,22 @@ Suite Setup        Suite Setup
 Suite Teardown     Suite Teardown
 
 *** Test Cases ***
-# Order Search Functionality With No Matching Orders
-#     [Documentation]    Test the search functionality in the order overview page with no matching orders
-#     [Tags]    search    functionality
-#     Log    Testing search functionality
+Order Search Functionality With No Matching Orders
+    [Documentation]    Test the search functionality in the order overview page with no matching orders
+    [Tags]    search    functionality
+    Log    Testing search functionality
     
-#     searchbar_page.Enter search term    qwertzuiopasdfghjklyxcvbnm
-#     searchbar_page.Verify no matching orders banner is present
+    searchbar_page.Enter search term    qwertzuiopasdfghjklyxcvbnm
+    searchbar_page.Verify no matching orders banner is present
 
 Order Search Functionality With Matching Orders
     [Documentation]    Test the search functionality in the order overview page with matching orders
     [Tags]    search    functionality
+    searchbar_page.Reset search
+    # Wait for orders to load before getting initial count
+    Sleep    3s
     
-    # Get initial order count before search
+    # Get initial order count
     ${initial_count}=    searchbar_page.Get order count from title
     Log    Initial order count: ${initial_count}
     
