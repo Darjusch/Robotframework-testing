@@ -1,6 +1,58 @@
-{"level":30,"time":"2025-09-09T07:16:45.532Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"Listening on 127.0.0.1:56489"}
-(node:19178) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+{"level":30,"time":"2025-09-10T13:40:16.805Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Listening on 127.0.0.1:63512"}
+(node:34417) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
 (Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-09-10T13:40:17.926Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-09-10T13:40:18.704Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-09-10T13:40:18.704Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-09-10T13:40:18.704Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-09-10T13:40:18.720Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-09-10T13:40:18.720Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"recordHar\":{\"path\":\"/Users/darjusch/dev/robot-test/har.file\",\"omitContent\":false},\"recordVideo\":{\"dir\":\"/Users/darjusch/dev/robot-test\",\"size\":{\"width\":1200,\"height\":800}},\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1200,\"height\":800}}"}
+{"level":30,"time":"2025-09-10T13:40:18.720Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@f496311a12a44e57b69de570737ecadc\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=5c2a7cff-24b2-45f5-addf-c3e8ab71eb29\"}"}
+{"level":30,"time":"2025-09-10T13:40:18.720Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Trace file: "}
+{"level":30,"time":"2025-09-10T13:40:18.750Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Setting default timeout for context context=08d426c4-255f-45e9-8ab6-fe8753f6ca29 to 10000"}
+{"level":30,"time":"2025-09-10T13:40:18.750Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method newContext"}
+{"level":30,"time":"2025-09-10T13:40:18.750Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Changed active context: context=08d426c4-255f-45e9-8ab6-fe8753f6ca29"}
+{"level":30,"time":"2025-09-10T13:40:18.753Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-09-10T13:40:18.753Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@f496311a12a44e57b69de570737ecadc\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=08d426c4-255f-45e9-8ab6-fe8753f6ca29\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@3f050857b6b680fe92f8751d2f853ec0\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":false,\"javaScriptEnabled\":true,\"offline\":false,\"recordHar\":{\"path\":\"/Users/darjusch/dev/robot-test/har.file\",\"omitContent\":false},\"recordVideo\":{\"dir\":\"/Users/darjusch/dev/robot-test\",\"size\":{\"width\":1200,\"height\":800}},\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1200,\"height\":800}},\"traceFile\":\"\"}],\"id\":\"browser=5c2a7cff-24b2-45f5-addf-c3e8ab71eb29\"}"}
+{"level":30,"time":"2025-09-10T13:40:19.179Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Video path: /Users/darjusch/dev/robot-test/c8b7d44572eb03b77d3892b516156984.webm"}
+{"level":30,"time":"2025-09-10T13:40:19.179Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Changed active page"}
+{"level":30,"time":"2025-09-10T13:40:20.187Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method newPage"}
+{"level":30,"time":"2025-09-10T13:40:20.191Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.191Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with role=heading[name*=\"Orders\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.863Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.866Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.866Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with role=heading[name*=\"Orders\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.869Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.871Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.871Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with css=input[placeholder*=\"Search\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.875Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.878Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.878Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with css=button[title*=\"Filter\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.881Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.883Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.883Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with css=button[title*=\"Group\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.886Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.889Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.889Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is enabled, find Locator with css=ul[id$=\"--list-listUl\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.893Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-09-10T13:40:20.896Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.896Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is disabled, return Locator: role=heading[name*=\"Orders\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.898Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.901Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.901Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is disabled, return Locator: css=input[placeholder*=\"Search\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.903Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.905Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.905Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is disabled, return Locator: css=button[title*=\"Filter\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.906Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.908Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.908Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is disabled, return Locator: css=button[title*=\"Group\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.909Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.913Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.913Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Strict mode is disabled, return Locator: css=ul[id$=\"--list-listUl\"] in page."}
+{"level":30,"time":"2025-09-10T13:40:20.914Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-09-10T13:40:20.916Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-09-10T13:40:21.005Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Removed page=db91742d-3af7-4762-8acb-ac20b05ecd35 from context=08d426c4-255f-45e9-8ab6-fe8753f6ca29 page stack"}
+{"level":30,"time":"2025-09-10T13:40:21.154Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method closeBrowser"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Users/darjusch/dev/robot-test/venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12227:15)
@@ -14,10 +66,8 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1367:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 =============================================================
-{"level":30,"time":"2025-09-09T07:16:46.660Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-09-09T07:16:46.660Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-09-09T07:16:46.667Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method closeBrowser"}
-{"level":30,"time":"2025-09-09T07:16:46.667Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method closeBrowser"}
+{"level":30,"time":"2025-09-10T13:40:21.159Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-10T13:40:21.159Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getBrowserCatalog"}
 ================= Original suppressed error =================
 Error: Browser has been closed.
     at PlaywrightState.getActiveBrowser (/Users/darjusch/dev/robot-test/venv/lib/python3.12/site-packages/Browser/wrapper/index.js:12227:15)
@@ -31,7 +81,7 @@ Error: Browser has been closed.
     at endReadableNT (node:internal/streams/readable:1367:12)
     at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
 =============================================================
-{"level":30,"time":"2025-09-09T07:16:46.671Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getBrowserCatalog"}
-{"level":30,"time":"2025-09-09T07:16:46.671Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getBrowserCatalog"}
-{"level":30,"time":"2025-09-09T07:16:48.699Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method closeAllBrowsers"}
-{"level":30,"time":"2025-09-09T07:16:48.700Z","pid":19178,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method closeAllBrowsers"}
+{"level":30,"time":"2025-09-10T13:40:21.161Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-10T13:40:21.162Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-09-10T13:40:21.178Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-09-10T13:40:21.178Z","pid":34417,"hostname":"Darjuschs-MBP.fritz.box","msg":"End of node method closeAllBrowsers"}
