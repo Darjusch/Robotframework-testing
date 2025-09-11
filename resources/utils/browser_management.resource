@@ -1,6 +1,6 @@
 *** Settings ***
 Library            Browser    timeout=20s
-Variables          ../locators/order_overview_page.yaml
+Variables          ../locators/order_overview.yaml
 
 
 *** Keywords ***
