@@ -19,18 +19,11 @@ Verify page elements are present
     Browser.Get Element Count    ${sorting button}    ==    1
     Browser.Get Element Count    ${list of orders}    ==    1
 
-Verify order list columns are visible
-    [Documentation]    Verify that the order list/table shows the required columns
-    Browser.Wait For Elements State    ${column header order id}        visible    timeout=10s
-    Browser.Wait For Elements State    ${column header customer name}   visible    timeout=10s
-    Browser.Wait For Elements State    ${column header shipped date}    visible    timeout=10s
-    Browser.Wait For Elements State    ${column header order date}      visible    timeout=10s
-    Browser.Wait For Elements State    ${column header status}          visible    timeout=10s
+Wait for orders to be visible
+    [Documentation]    Wait until the list of orders is visible
+    Browser.Wait For Elements State    ${orders}    visible    timeout=10s
 
-Verify first order row has required fields
-    [Documentation]    Verify that the first order row contains OrderID, Customer Name, ShippedDate, OrderDate, Status
-    Browser.Wait For Elements State    ${first row order id cell}       visible    timeout=10s
-    Browser.Wait For Elements State    ${first row customer name cell}  visible    timeout=10s
-    Browser.Wait For Elements State    ${first row shipped date cell}   visible    timeout=10s
-    Browser.Wait For Elements State    ${first row order date cell}     visible    timeout=10s
-    Browser.Wait For Elements State    ${first row status cell}         visible    timeout=10s
+Get orders count
+    [Documentation]    Return the number of order items on the page
+    ${count}=    Browser.Get Element Count    ${orders}
+    RETURN    ${count}
