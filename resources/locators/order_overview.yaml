@@ -12,11 +12,11 @@ orders: css=ul[id$="--list-listUl"] .sapMLIB #  $= (ends-with)
 item in list of orders (per Index): css=ul[id$="--list-listUl"] .sapMLIB >> nth=${index-1} # .sapMLIB inside ul[id$="--list-listUl"] - >>  chain operator - nth=${index-1} - index starts at 0
 
 # Order Item
-order item title: ${item} >> .sapMObjLTitle, .sapMTitle, .sapMText:has-text("Order ${order_id}") # z.B. "Order 1234567890"
-order item company name: ${item} >> .sapMText:has-text("${customer}") # z.B. "Customer Name"
-order item shipped date: ${item} >> .sapMText:has-text("${shipped_date}") # z.B. "Nov 25, 2016"
-order item ordered date: ${item} >> .sapMObjectNumberText:has-text("${secondary_date}") # z.B. "11/21/16"
-order item status: ${item} >> .sapMObjStatus, .sapMObjectStatusText:has-text("${status}") # "In time" | "Urgent" | "Too late"
+order item title relative: css=span[id$="-titleText-inner"]
+order item company name relative: css=div[id*="--companyName-"] span.sapMText
+order item shipped date relative: css=span.sapMText:has-text("Shipped:")
+order item ordered date relative: css=span.sapMObjectNumberText
+order item status text relative: css=.sapMObjStatusText
 
 # Specific locators for extracting customer names (second .sapMText element in each order item)
 order item customer name text: css=ul[id$="--list-listUl"] .sapMLIB >> nth=${index-1} >> .sapMText >> nth=1 # Second .sapMText element contains customer name
