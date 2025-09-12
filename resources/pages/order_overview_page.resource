@@ -19,3 +19,11 @@ Verify page elements are present
     Browser.Get Element Count    ${sorting button}    ==    1
     Browser.Get Element Count    ${list of orders}    ==    1
 
+Wait for orders to be visible
+    [Documentation]    Wait until the list of orders is visible
+    Browser.Wait For Elements State    ${orders}    visible    timeout=10s
+
+Get orders count
+    [Documentation]    Return the number of order items on the page
+    ${count}=    Browser.Get Element Count    ${orders}
+    RETURN    ${count}
