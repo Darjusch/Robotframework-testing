@@ -7,6 +7,7 @@ title total orders: role=heading[name*="Orders"]
 #list of orders: container-orderbrowser---master--list-listUl
 # Correct ✅
 list of orders: css=ul[id$="--list-listUl"] #  $= (ends-with)
+orders: css=ul[id$="--list-listUl"] .sapMLIB #  $= (ends-with)
 
 item in list of orders (per Index): css=ul[id$="--list-listUl"] .sapMLIB >> nth=${index-1} # .sapMLIB inside ul[id$="--list-listUl"] - >>  chain operator - nth=${index-1} - index starts at 0
 
