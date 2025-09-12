@@ -1,8 +1,8 @@
 *** Settings ***
 Library            Browser
 Library            OperatingSystem
-Resource           utils${/}browser_management.resource
-Resource           pages${/}order_overview_page.resource
+Resource           ../resources/utils/browser_management.resource
+Resource           ../resources/pages/order_overview_page.resource
 Suite Setup        Suite Setup
 Suite Teardown     Suite Teardown
 
