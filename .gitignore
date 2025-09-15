@@ -28,7 +28,6 @@ trace.zip
 *.webm
 playwright-log.txt
 
-
 # --- Node/Playwright (if any local use) ---
 node_modules/
 
