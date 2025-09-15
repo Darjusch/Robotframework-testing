@@ -2,6 +2,7 @@
 Library            Browser
 Library            Collections
 Variables          ../locators/order_overview.yaml
+Variables          ../locators/order_details_section.yaml
 
 *** Keywords ***
 Get all order status texts

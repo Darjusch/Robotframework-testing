@@ -1,0 +1,5 @@
+# Detail view (fill with your final selectors)
+order details panel: css=div[id$="container-orderbrowser---app--layout-midColumn"]
+order details title: css=div[id$="container-orderbrowser---detail--page-pageTitle-left-inner"]
+order details general info: css=section[id$="container-orderbrowser---detail--page-pageHeader"]
+order details shipping address panel: css=div[id$="container-orderbrowser---detail--iconTabBar-containerContent"]
