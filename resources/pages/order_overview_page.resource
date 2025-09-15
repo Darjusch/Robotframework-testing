@@ -2,6 +2,7 @@
 Library            Browser
 Variables          ../locators/order_overview.yaml
 Variables          ../locators/searchbar.yaml
+Variables          ../locators/sorting_orders.yaml
 
 *** Keywords ***
 Wait for page elements to load

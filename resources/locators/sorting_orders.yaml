@@ -1,0 +1,8 @@
+sorting button: css=button[title*="Group"] span[id$="groupButton-img"]
+ascending option: css=div[id$="--viewSettingsDialog-grouplist"] .sapMSLITitleOnly:has-text("Ascending")
+descending option: css=div[id$="--viewSettingsDialog-grouplist"] .sapMSLITitleOnly:has-text("Descending")
+group by customer option: css=div[id$="--viewSettingsDialog-grouplist"] .sapMSLITitleOnly:has-text("Group by Customer")
+group by order period: css=div[id$="--viewSettingsDialog-grouplist"] .sapMSLITitleOnly:has-text("Group by Order Period")
+group by shipped period: css=div[id$="--viewSettingsDialog-grouplist"] .sapMSLITitleOnly:has-text("Group by Shipped Period")
+ok button: css=button[id$="-acceptbutton"]
+sorted group titles: css=ul[id$="--list-listUl"] .sapMGHLITitle
