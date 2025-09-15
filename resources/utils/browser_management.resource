@@ -1,5 +1,6 @@
 *** Settings ***
 Library            Browser    timeout=20s
+Library            DateTime
 Variables          ../locators/order_overview.yaml
 
 
@@ -14,12 +15,16 @@ Set up browser
     [Arguments]    ${url}    ${browser}=chromium    ${headless}=False    ${slowMo}=0:00:00.5
     ...        ${viewport}={"width": 1200, "height": 800}
     Browser.New Browser    ${browser}    ${headless}    slowMo=${slowMo}
+    
     ${har_config}=
         ...    BuiltIn.Create Dictionary
         ...    path=${OUTPUT_DIR}${/}har.file
         ...    omitContent=False
+
     ${vid_config}=
         ...    BuiltIn.Create Dictionary
-        ...    dir=${OUTPUT_DIR}
+        ...    dir=${OUTPUT_DIR}${/}video-recordings
+        ...    size={"width": 1200, "height": 800}
+    
     Browser.New Context    viewport=${viewport}    recordHar=${har_config}    recordVideo=${vid_config}
     Browser.New Page    url=${url}    
