@@ -29,9 +29,6 @@ only order without shippment button: css=button[id*="selectSingle-Button"]:has-t
 confirm filter by button: css=button[title*="Accept"] # Confirm filter button
 success message for filter: css=.sapMFilterBarLabel # Filter success message
 
-# Searchbar
-order_searchbar_input_field: css=input[id$="--searchField-I"]
-
 # Sorting
 sorting button: css=button[title*="Group"] # Sort button or dropdown
 
