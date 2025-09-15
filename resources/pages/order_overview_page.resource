@@ -1,6 +1,6 @@
 *** Settings ***
 Library            Browser
-Variables          ../locators/order_overview_page.yaml
+Variables          ../locators/order_overview.yaml
 Variables          ../locators/searchbar.yaml
 
 *** Keywords ***

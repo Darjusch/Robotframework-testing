@@ -3,7 +3,7 @@ Library            Browser
 Library            String
 Library            Collections
 Variables          ../locators/searchbar.yaml
-Variables          ../locators/order_overview_page.yaml
+Variables          ../locators/order_overview.yaml
 
 *** Keywords ***
 Enter search term
