@@ -1,7 +1,7 @@
 *** Settings ***
 Library            Browser    timeout=20s
 Library            DateTime
-Variables          ../locators/order_overview.yaml
+Variables          ../locators/sap_browse_orders/order_overview.yaml
 
 
 *** Keywords ***

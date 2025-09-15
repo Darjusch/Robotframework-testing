@@ -2,8 +2,8 @@
 Library            Browser
 Library            String
 Library            Collections
-Variables          ../locators/searchbar.yaml
-Variables          ../locators/order_overview.yaml
+Variables          ../../locators/sap_browse_orders/searchbar.yaml
+Variables          ../../locators/sap_browse_orders/order_overview.yaml
 
 *** Keywords ***
 Enter search term

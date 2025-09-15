@@ -1,8 +1,8 @@
 *** Settings ***
 Library            Browser
-Variables          ../locators/order_overview.yaml
-Variables          ../locators/searchbar.yaml
-Variables          ../locators/sorting_orders.yaml
+Variables          ../../locators/sap_browse_orders/order_overview.yaml
+Variables          ../../locators/sap_browse_orders/searchbar.yaml
+Variables          ../../locators/sap_browse_orders/sorting_orders.yaml
 
 *** Keywords ***
 Wait for page elements to load

@@ -2,8 +2,8 @@
 Library            Browser
 Library            OperatingSystem
 Library            Collections
-Resource           ../resources/utils/browser_management.resource
-Resource           ../resources/pages/order_overview_page.resource
+Resource           ../../resources/utils/browser_management.resource
+Resource           ../../resources/pages/sap_browse_orders/order_overview_page.resource
 
 *** Test Cases ***
 Order List

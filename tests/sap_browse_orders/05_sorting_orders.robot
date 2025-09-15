@@ -1,10 +1,10 @@
 *** Settings ***
 Library            Browser
 Library            OperatingSystem
-Resource           ../resources/utils/browser_management.resource
-Resource           ../resources/pages/order_overview_page.resource
-Resource           ../resources/pages/order_status_page.resource
-Resource           ../resources/pages/sorting_orders_page.resource
+Resource           ../../resources/utils/browser_management.resource
+Resource           ../../resources/pages/sap_browse_orders/order_overview_page.resource
+Resource           ../../resources/pages/sap_browse_orders/order_status_page.resource
+Resource           ../../resources/pages/sap_browse_orders/sorting_orders_page.resource
 Suite Setup        Suite Setup
 Suite Teardown     Suite Teardown
 

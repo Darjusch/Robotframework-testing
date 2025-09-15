@@ -1,7 +1,7 @@
 *** Settings ***
 Library            Browser
 Library            Collections
-Variables          ../locators/order_overview.yaml
+Variables          ../../locators/sap_browse_orders/order_overview.yaml
 
 *** Keywords ***
 Get all order status texts
