@@ -1,0 +1,39 @@
+# Wrong ❌
+#title total orders: container-orderbrowser---master--masterHeaderTitle-inner
+# Correct ✅
+title total orders: role=heading[name*="Orders"]
+
+# Wrong ❌
+#list of orders: container-orderbrowser---master--list-listUl
+# Correct ✅
+list of orders: css=ul[id$="--list-listUl"] #  $= (ends-with)
+orders: css=ul[id$="--list-listUl"] .sapMLIB #  $= (ends-with)
+
+item in list of orders (per Index): css=ul[id$="--list-listUl"] .sapMLIB >> nth=${index-1} # .sapMLIB inside ul[id$="--list-listUl"] - >>  chain operator - nth=${index-1} - index starts at 0
+
+# Order Item
+order item title relative: css=span[id$="-titleText-inner"]
+order item company name relative: css=div[id*="--companyName-"] span.sapMText
+order item shipped date relative: css=span.sapMText:has-text("Shipped:")
+order item ordered date relative: css=span.sapMObjectNumberText
+order item status text relative: css=.sapMObjStatusText
+
+# Specific locators for extracting customer names (second .sapMText element in each order item)
+order item customer name text: css=ul[id$="--list-listUl"] .sapMLIB >> nth=${index-1} >> .sapMText >> nth=1 # Second .sapMText element contains customer name
+
+# Filter
+filter button: css=button[title*="Filter"] # Filter button
+filter by order button: css=.sapMSLITitleOnly # Filter dropdown items
+only shipped order button: css=button[id*="selectSingle-Button"]:has-text("Shipped") # Shipped orders filter
+only order without shippment button: css=button[id*="selectSingle-Button"]:has-text("without") # Orders without shipment filter
+confirm filter by button: css=button[title*="Accept"] # Confirm filter button
+success message for filter: css=.sapMFilterBarLabel # Filter success message
+
+# Sorting
+sorting button: css=button[title*="Group"] # Sort button or dropdown
+
+# Status Color
+STATUS_COLORS:
+  IN_TIME: sapMObjStatusSuccess
+  URGENT: sapMObjStatusWarning
+  TOO_LATE: sapMObjStatusError
