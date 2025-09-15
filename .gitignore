@@ -1,5 +1,8 @@
 # --- Python ---
 venv/
+.venv/
+har.file
+playwright-log.txt
 .env
 __pycache__/
 *.py[cod]
@@ -26,7 +29,7 @@ trace.zip
 *.xml
 *.txt
 *.webm
-*.yaml
+playwright-log.txt
 
 # --- Node/Playwright (if any local use) ---
 node_modules/
