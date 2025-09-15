@@ -30,7 +30,7 @@ trace.zip
 *.txt
 *.webm
 playwright-log.txt
-
+interactive_console_output.xml
 # --- Node/Playwright (if any local use) ---
 node_modules/
 

@@ -2,6 +2,7 @@
 Library            Browser
 Variables          ../locators/order_overview.yaml
 Variables          ../locators/searchbar.yaml
+Variables          ../locators/sorting_orders.yaml
 
 *** Keywords ***
 Wait for page elements to load
@@ -43,8 +44,8 @@ Verify order item has required fields
     BuiltIn.Set Local Variable    ${shipped_date}
     BuiltIn.Set Local Variable    ${secondary_date}
     BuiltIn.Set Local Variable    ${status}
-    Browser.Wait For Elements State    ${order item title}          visible    timeout=10s
-    Browser.Wait For Elements State    ${order item company name}   visible    timeout=10s
-    Browser.Wait For Elements State    ${order item shipped date}   visible    timeout=10s
-    Browser.Wait For Elements State    ${order item ordered date}   visible    timeout=10s
-    Browser.Wait For Elements State    ${order item status}         visible    timeout=10s
+    Browser.Wait For Elements State    ${order item title relative}          visible    timeout=10s
+    Browser.Wait For Elements State    ${order item company name relative}   visible    timeout=10s
+    Browser.Wait For Elements State    ${order item shipped date relative}   visible    timeout=10s
+    Browser.Wait For Elements State    ${order item ordered date relative}   visible    timeout=10s
+    Browser.Wait For Elements State    ${order item status text relative}         visible    timeout=10s
