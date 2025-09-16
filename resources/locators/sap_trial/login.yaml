@@ -1,0 +1,3 @@
+username input: css=input[id="j_username"]
+password input: css=input[id="j_password"]
+login button: css=button[id="logOnFormSubmit"]

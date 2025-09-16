@@ -1,0 +1,3 @@
+launchpad:
+  space_tile_by_name_contains: 'role=listitem[name*="{SPACE_NAME}"]'
+  leave_tour_button: role=button[name="Leave Tour"]
