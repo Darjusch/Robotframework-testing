@@ -9,136 +9,62 @@
 | 5   | **Sorting by Order Date**   | 1. Click on the "Order Customer" column header<br>2. Check the displayed order sequence                                                        | Orders sorted by Customer name ascending;                              |
 | 6   | **Order List**              | 1.Verify if the Orders have the correct fields.                                                                                                | OrderID, FN - LN, ShippedDate, OrderDate, Status                       |
 
-## Swag Labs Login - End-to-End Test Flows
+## SAP - Trial END2END
 
-### Flow 1: Complete Happy Path Purchase Flow
+🔹 Flow 1: Procure-to-Pay Mini (MM → FI/AP)
 
-**Objective**: Test the complete user journey from login to successful purchase and logout
+Ziel: Von der Bestellung bis zur Rechnung ein End-to-End-Szenario durchspielen.
 
-**Steps**:
+Schritte: 1. Supplier prüfen oder anlegen
+• Im Trial sind oft schon Demo-Lieferanten (Business Partner mit Supplier-Rolle) vorhanden.
+• Am einfachsten: einen vorhandenen Supplier in der App Manage Business Partner suchen (z. B. über „Role = Supplier“).
+• Falls keiner verfügbar ist, müsstest du einen neuen Business Partner mit der Rolle Supplier anlegen. → im Trial klappt das manchmal, manchmal ist die Neuanlage gesperrt. 2. Bestellung anlegen (Purchase Order)
+• App: Manage Purchase Orders oder Create Purchase Order.
+• Daten: Supplier, Material, Werk, Menge.
+• Ergebnis: PO-Nummer. 3. Wareneingang buchen (Goods Receipt)
+• App: Post Goods Receipt for Purchasing Document.
+• Referenz: die PO-Nummer.
+• Ergebnis: Materialbestand erhöht, Belegnummer für WE. 4. Kreditorenrechnung erfassen (Supplier Invoice)
+• App: Create Supplier Invoice.
+• Daten: Supplier, Betrag, Währung, PO-Referenz.
+• Ergebnis: FI-Beleg erzeugt (Debitor/Kreditor-Buchung).
 
-1. Navigate to https://www.saucedemo.com/
-2. Login with valid credentials (standard_user)
-3. Add 2-3 items to shopping cart
-4. Navigate to shopping cart
-5. Verify cart items and calculate total price (subtotal + tax)
-6. Proceed to checkout
-7. Fill shipping information with generated test data
-8. Verify checkout overview (items, shipping, payment, total)
-9. Complete purchase
-10. Verify order confirmation message
-11. Return to products page
-12. Logout from application
+➡️ Ende des Flows: Bestellung → WE → Rechnung → FI-Beleg.
+Das bildet den klassischen P2P-Kernprozess ab.
 
-**Expected Result**: Complete end-to-end flow executes successfully with accurate price calculations and proper data handling
+⸻
 
----
+🔹 Flow 2: FI/CO Kostenbuchung
 
-### Flow 2: Data-Driven Purchase Flow with Multiple Users
+Ziel: Einfache Kostenbuchung anlegen, die in CO ausgewertet werden kann.
 
-**Objective**: Test complete purchase flow with different user types and generated shipping data
+Schritte: 1. Kostenstelle anlegen
+• App: Manage Cost Centers.
+• Neues Cost Center z. B. „CC_TEST_001“ in Controlling Area „A000“, Company Code „1010“.
+• Ergebnis: Neue Kostenstelle ist angelegt. 2. Journal Entry buchen
+• App: Post General Journal Entries.
+• Kopf: Company Code, Währung.
+• Position 1 (Soll): Aufwandskonto (z. B. 600000), Betrag, Kostenstelle.
+• Position 2 (Haben): z. B. Bank-/Clearing-Konto.
+• Ergebnis: FI-Beleg mit Kostenstellenzuordnung. 3. CO-Report prüfen
+• App: Cost Centers – Actuals oder ähnlicher Report.
+• Filter auf die neue Kostenstelle setzen.
+• Ergebnis: Das gebuchte Journal Entry taucht in der Kostenstellen-Auswertung auf.
 
-**Steps**:
+➡️ Ende des Flows: Man sieht, wie eine FI-Buchung in CO durchschlägt.
 
-1. Navigate to https://www.saucedemo.com/
-2. Login with different user accounts (standard_user, problem_user, performance_glitch_user)
-3. Add various items to cart
-4. Navigate to shopping cart and verify items
-5. Proceed to checkout
-6. Fill shipping information with generated test data (names, addresses, postal codes)
-7. Complete purchase process
-8. Verify order confirmation
-9. Logout
+⸻
 
-**Expected Result**: All user types can complete purchase successfully with generated shipping data
+🔹 Flow 3: BP Customer Smoke
 
----
+Ziel: Einfachen Kunden-Business Partner anlegen und prüfen, ob er gefunden wird.
 
-### Flow 3: Cart Management and Price Verification Flow
+Schritte: 1. Neuen Business Partner anlegen
+• App: Manage Business Partner.
+• Eingaben: ID „CUST_TEST_001“, Name „Testkunde RF“.
+• Rolle: Customer hinzufügen.
+• Ergebnis: Neuer BP mit Kundenrolle. 2. Suche/Filterung
+• In derselben App nach „Testkunde RF“ oder der BP-ID suchen.
+• Ergebnis: Treffer erscheint in der Tabelle.
 
-**Objective**: Test comprehensive cart operations with price calculations
-
-**Steps**:
-
-1. Navigate to https://www.saucedemo.com/
-2. Login with valid credentials
-3. Add multiple items to cart
-4. Remove some items from cart
-5. Navigate to shopping cart
-6. Verify remaining items and prices
-7. Calculate and verify total price (subtotal + tax)
-8. Continue shopping and add more items
-9. Return to cart and verify updated totals
-10. Proceed to checkout with generated shipping data
-11. Complete purchase
-12. Logout
-
-**Expected Result**: Cart operations work correctly with accurate price calculations throughout the flow
-
----
-
-### Flow 4: Error Handling and Edge Cases Flow
-
-**Objective**: Test error scenarios and edge cases in the complete flow
-
-**Steps**:
-
-1. Navigate to https://www.saucedemo.com/
-2. Attempt login with invalid credentials (verify error message)
-3. Login with locked user (verify error message)
-4. Login with valid credentials
-5. Add items to cart
-6. Navigate to cart and verify items
-7. Proceed to checkout
-8. Test with empty shipping fields (verify validation)
-9. Fill shipping information with generated data
-10. Complete purchase
-11. Verify order confirmation
-12. Logout
-
-**Expected Result**: Error handling works correctly and flow continues after resolving issues
-
----
-
-### Flow 5: Security and Data Validation Flow
-
-**Objective**: Test security measures and data validation throughout the complete flow
-
-**Steps**:
-
-1. Navigate to https://www.saucedemo.com/
-2. Verify password field masking during login
-3. Login with valid credentials
-4. Add items to cart
-5. Navigate to cart and verify items
-6. Proceed to checkout
-7. Test shipping form with special characters and edge cases
-8. Fill shipping information with generated data (including special characters)
-9. Verify data validation and sanitization
-10. Complete purchase
-11. Verify order confirmation
-12. Logout
-
-**Expected Result**: Security measures are in place and data validation works correctly with generated test data
-
----
-
-### Flow 6: Performance and Persistence Flow
-
-**Objective**: Test performance and data persistence throughout the complete flow
-
-**Steps**:
-
-1. Navigate to https://www.saucedemo.com/
-2. Login with performance_glitch_user
-3. Add items to cart
-4. Navigate away from cart and return (verify persistence)
-5. Navigate to cart and verify items remain
-6. Proceed to checkout
-7. Fill shipping information with generated data
-8. Complete purchase
-9. Verify order confirmation
-10. Navigate back to products and verify cart is empty
-11. Logout
-
-**Expected Result**: Cart persistence works correctly and performance is acceptable throughout the flow
+➡️ Ende des Flows: Kunden-BP erfolgreich angelegt und auffindbar.
