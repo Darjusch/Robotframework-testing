@@ -11,60 +11,78 @@
 
 ## SAP - Trial END2END
 
-🔹 Flow 1: Procure-to-Pay Mini (MM → FI/AP)
-
-Ziel: Von der Bestellung bis zur Rechnung ein End-to-End-Szenario durchspielen.
-
-Schritte: 1. Supplier prüfen oder anlegen
-• Im Trial sind oft schon Demo-Lieferanten (Business Partner mit Supplier-Rolle) vorhanden.
-• Am einfachsten: einen vorhandenen Supplier in der App Manage Business Partner suchen (z. B. über „Role = Supplier“).
-• Falls keiner verfügbar ist, müsstest du einen neuen Business Partner mit der Rolle Supplier anlegen. → im Trial klappt das manchmal, manchmal ist die Neuanlage gesperrt. 2. Bestellung anlegen (Purchase Order)
-• App: Manage Purchase Orders oder Create Purchase Order.
-• Daten: Supplier, Material, Werk, Menge.
-• Ergebnis: PO-Nummer. 3. Wareneingang buchen (Goods Receipt)
-• App: Post Goods Receipt for Purchasing Document.
-• Referenz: die PO-Nummer.
-• Ergebnis: Materialbestand erhöht, Belegnummer für WE. 4. Kreditorenrechnung erfassen (Supplier Invoice)
-• App: Create Supplier Invoice.
-• Daten: Supplier, Betrag, Währung, PO-Referenz.
-• Ergebnis: FI-Beleg erzeugt (Debitor/Kreditor-Buchung).
-
-➡️ Ende des Flows: Bestellung → WE → Rechnung → FI-Beleg.
-Das bildet den klassischen P2P-Kernprozess ab.
+0. Voraussetzungen (einmalig prüfen)
+   • Fiori Launchpad offen.
+   • Kunde: z. B. Silverstar Corp. (17100001) (Value Help nutzen, falls unsicher).
+   • Material: z. B. TG11 (notfalls anderes per Value Help auswählen).
+   • Org-Daten:
+   • Sales Org: Domestic Sales Org US (1710)
+   • Distribution Channel: Direct Sales (10)
+   • Division: Product Division 00 (00)
 
 ⸻
 
-🔹 Flow 2: FI/CO Kostenbuchung
+1. Sales Order anlegen (Create Sales Orders) 1. Öffne Create Sales Orders (Fiori-Suche oben: „Create Sales Orders“). 2. Im Einstiegsdialog:
+   • Order Type: Standard Order (OR)
+   • Sales Organization: 1710
+   • Distribution Channel: 10
+   • Division: 00
+   • Continue klicken. 3. Feld Sold-to Party: Silverstar Corp. (17100001) auswählen (Value Help → wählen).
+   • Ship-to wird meist automatisch gezogen. Wenn nicht: per Partner-Funktion setzen. 4. Position hinzufügen:
+   • Material: TG11 (oder anderes per Value Help).
+   • Order Quantity: 1 (falls Mindestmenge-Warnung → entweder akzeptieren und mit „Save“ speichern oder Menge erhöhen / anderes Material).
+   • Plant: wird oft automatisch bestimmt; wenn „Incompletion“ meckert → im Positionsbereich Plant (Werk) wählen. 5. Create/Save klicken. 6. Oben erscheint eine Meldung: „Standard Order XXXXX was created“ (ggf. „with incompletion“).
+   → Vermerke die Sales-Order-Nummer (brauchen wir gleich).
 
-Ziel: Einfache Kostenbuchung anlegen, die in CO ausgewertet werden kann.
-
-Schritte: 1. Kostenstelle anlegen
-• App: Manage Cost Centers.
-• Neues Cost Center z. B. „CC_TEST_001“ in Controlling Area „A000“, Company Code „1010“.
-• Ergebnis: Neue Kostenstelle ist angelegt. 2. Journal Entry buchen
-• App: Post General Journal Entries.
-• Kopf: Company Code, Währung.
-• Position 1 (Soll): Aufwandskonto (z. B. 600000), Betrag, Kostenstelle.
-• Position 2 (Haben): z. B. Bank-/Clearing-Konto.
-• Ergebnis: FI-Beleg mit Kostenstellenzuordnung. 3. CO-Report prüfen
-• App: Cost Centers – Actuals oder ähnlicher Report.
-• Filter auf die neue Kostenstelle setzen.
-• Ergebnis: Das gebuchte Journal Entry taucht in der Kostenstellen-Auswertung auf.
-
-➡️ Ende des Flows: Man sieht, wie eine FI-Buchung in CO durchschlägt.
+Typische Warnungen (ok zu ignorieren):
+– Minimum quantity … not reached → Menge erhöhen oder ignorieren.
+– Document is incomplete → meist trotzdem speicherbar; fehlendes Feld per Incompletion-Log nachpflegen (z. B. Plant).
 
 ⸻
 
-🔹 Flow 3: BP Customer Smoke
+2. Outbound Delivery anlegen (mit Order-Referenz) 1. Öffne Create Outbound Deliveries – With Order Reference. (Suche: „Create Outbound Deliveries“) 2. Felder füllen:
+   • Shipping Point: per Value Help auswählen (nimm einen zu 1710 passenden; irgendein angebotener Shipping Point ist ok).
+   • Sales Order: deine eben erzeugte Sales-Order-Nummer eintragen → Enter. 3. Unten die Position(en) auswählen (Haken). 4. Create Delivery klicken. 5. Oben steht eine Meldung mit der Delivery-Nummer (z. B. 8000…).
+   → Nummer notieren.
 
-Ziel: Einfachen Kunden-Business Partner anlegen und prüfen, ob er gefunden wird.
+Wenn keine Lieferung möglich:
+– Prüfe in der Sales Order die Schedule Lines (Terminlinie), ob bestätigte Menge/Plant da ist.
+– Fehlende Daten (z. B. Plant) in der Order-Position nachtragen und erneut Lieferung anlegen.
 
-Schritte: 1. Neuen Business Partner anlegen
-• App: Manage Business Partner.
-• Eingaben: ID „CUST_TEST_001“, Name „Testkunde RF“.
-• Rolle: Customer hinzufügen.
-• Ergebnis: Neuer BP mit Kundenrolle. 2. Suche/Filterung
-• In derselben App nach „Testkunde RF“ oder der BP-ID suchen.
-• Ergebnis: Treffer erscheint in der Tabelle.
+⸻
 
-➡️ Ende des Flows: Kunden-BP erfolgreich angelegt und auffindbar.
+3. Post Goods Issue (Warenausgang buchen) 1. Öffne Post Goods Issue for Outbound Delivery. 2. Delivery Number: deine Lieferungsnummer eintragen → Enter. 3. Kurz prüfen (Position/Qty). 4. Post Goods Issue (oder Post) klicken. 5. Meldung abwarten: Material-Beleg/Dokumentnummer wird angezeigt.
+   → optional notieren.
+
+⸻
+
+4. Billing Document (Rechnung) erstellen 1. Öffne Create Billing Documents (manchmal „Billing Due List“). 2. Filter setzen, z. B.:
+   • Delivery: deine Lieferungsnummer oder
+   • Sales Order: deine Auftragsnummer oder
+   • Customer: 17100001 3. Go / Apply. 4. In der Ergebnisliste die fällige Position anhaken. 5. Create Billing Document klicken. 6. Meldung mit Billing Document Number (z. B. 9000…) erscheint.
+   → Nummer notieren.
+
+In Standard-Szenarien wird die Rechnung direkt in FI gebucht (kein zusätzlicher Schritt nötig).
+
+⸻
+
+5. FI-Beleg anzeigen (Accounting Document)
+
+Du hast mehrere Wege:
+
+A) Aus der Rechnung heraus 1. Öffne Manage Billing Documents oder Display Billing Document. 2. Suche deine Billing-Dokumentnummer. 3. In den Dokumentdetails gibt es i. d. R. einen Link/Button: „Display Accounting Document“ / „Journal Entry“. 4. Anklicken → der zugehörige FI-Beleg öffnet sich.
+
+B) Über Journal Entries 1. Öffne Manage Journal Entries oder Display Journal Entry. 2. Filter nach Reference/Document/Posting Date und/oder Customer. 3. Go → Eintrag öffnen → Line Items / Header prüfen.
+
+C) Dokumentfluss 1. Öffne Manage Sales Orders. 2. Suche deine Sales Order → Open. 3. Document Flow öffnen.
+→ Hier siehst du die Kette: Sales Order → Delivery → Goods Issue → Billing → Accounting Document.
+→ Auf den Accounting-Dokument-Link klicken.
+
+⸻
+
+Troubleshooting & Tipps
+• Incompletion verhindert Lieferung/Rechnung: In der Order „Incompletion Log“ öffnen und fehlende Pflichtfelder (meist Plant/Shipping/Incoterms) nachpflegen.
+• Mindestmengen/Gratisgüter-Warnungen: Menge erhöhen oder anderes Material per Value Help wählen (Filter nach „Material Type = Finished Goods“ hilft oft).
+• Shipping Point unbekannt: Value Help öffnen und einen beliebigen angebotenen Punkt wählen, der zu 1710 passt (Demo ist tolerant).
+• Keine Billing-Due-Liste: Prüfe, ob PGI wirklich gebucht ist (ohne PGI kein Billing).
+• FI-Beleg fehlt: In manchen Demos wird die Rechnung sofort gebucht, in anderen braucht es ggf. „Post“ – im Billing-Dokument prüfen, ob Status „Posted to Accounting“ steht; sonst entsprechenden Button nutzen.
