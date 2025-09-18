@@ -1,17 +1,17 @@
 create sales order button: role=link[name="Create Sales Orders Navigation Tile"]
 create order modal:
-  sales order type input: css=input[id*="SalesOrderType"]
-  sales organisation type input: css=input[id*="SalesOrganization"]
-  sales distributon channel type input: css=input[id*="DistributionChannel"]
-  sales organisation division input: css=input[id*="OrganizationDivision"]
-  continue button: css=button[id*="Action::Ok"]
+  sales_order_type_input: css=input[id*="SalesOrderType"]
+  sales_organisation_type_input: css=input[id*="SalesOrganization"]
+  sales_distributon_channel_type_input: css=input[id*="DistributionChannel"]
+  sales_organisation_division_input: css=input[id*="OrganizationDivision"]
+  continue_button: css=button[id*="Action::Ok"]
 
 new sales order:
-  basic data:
-    sales sold to party input: css=input[id*="SoldToParty"]
-    customer reference input: css=input[aria-labelledby*="PurchaseOrderByCustomer"]
-  item product:
-    item product name: css=input[aria-labelledby*="Product"]
-    item product requested quantity: css=input[aria-labelledby*="RequestedQuantity"]
-  create button: css=button[id*="Save"]
-  success message modal: .sapMMessageToastHiddenFocusable
+  basic_data:
+    sales_sold_to_party_input: css=input[id*="SoldToParty"]
+    customer_reference_input: css=input[aria-labelledby*="PurchaseOrderByCustomer"]
+  item_product:
+    item_product_name: css=input[aria-labelledby*="Product"]
+    item_product_requested_quantity: css=input[aria-labelledby*="RequestedQuantity"]:not([id*="-unit-"])
+  create_button: css=button[id*="Save"]
+  success_message_modal: .sapMMessageToast

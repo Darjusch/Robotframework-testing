@@ -8,7 +8,7 @@ Resource           ../../utils/browser_management.resource
 
 *** Keywords ***
 Login
-    Open SAP Trial LAUNCHPAD site    headless=False
+    Open SAP Trial LAUNCHPAD site    headless=${True}
     Log    Page loaded, looking for username field
     Wait For Elements State    ${username input}    visible    10s
     Log    Username field found, clearing and filling
@@ -23,7 +23,7 @@ Login
     Log    Password filled, clicking login button
     Click    ${login button}
     Log    Final login button clicked, waiting for launchpad
-    Sleep    5s
+    Sleep    1s
     ${finance_locator}=    Format String    ${launchpad.space_tile_by_name_contains}    SPACE_NAME=Finance
     Wait For Elements State    ${finance_locator}    visible    30s
 

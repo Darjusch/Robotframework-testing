@@ -11,7 +11,7 @@ Open Space
     Close Help Tour If Visible
 
 Close Help Tour If Visible
-    ${found}=    Run Keyword And Return Status    Wait For Elements State    ${launchpad.leave_tour_button}    visible    3s
+    ${found}=    Run Keyword And Return Status    Wait For Elements State    ${launchpad.leave_tour_button}    visible    5s
     IF    ${found}
         Click    ${launchpad.leave_tour_button}
         Log    "Help Tour closed"

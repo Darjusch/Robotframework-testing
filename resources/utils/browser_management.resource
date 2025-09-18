@@ -13,7 +13,7 @@ Open SAP Fiori Orders demo site
     Browser.Wait For Elements State    ${title total orders}    visible    message=Orders title didn't load correctly
 
 Open SAP Trial LAUNCHPAD site
-    [Arguments]    ${browser}=chromium    ${headless}=${False}    ${slowMo}=0:00:00.5
+    [Arguments]    ${browser}=chromium    ${headless}=${True}    ${slowMo}=0:00:00.5
     ...        ${viewport}={"width": 1200, "height": 800}    ${url}=https://my426318.s4hana.cloud.sap/ui?sap-language=EN&help-mixedLanguages=false&help-autoStartTour=PR_28A0E50CC77DAF91#Shell-home
     Set up browser    url=${url}    browser=${browser}    headless=${headless}    slowMo=${slowMo}    viewport=${viewport}
     Sleep    5s
