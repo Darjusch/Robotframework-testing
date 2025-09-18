@@ -7,8 +7,10 @@ Suite Setup        Login And Wait
 Suite Teardown     Close Browser
 
 *** Test Cases ***
-Open Finance Space
-    Open Space    Finance
+Create Sales Order
+    Open Space    Sales
+    Create Sales Order
+    
 
 *** Keywords ***
 Login And Wait
