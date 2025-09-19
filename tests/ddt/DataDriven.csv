@@ -1,0 +1,4 @@
+*** Test Cases ***;${username};${password}
+Right user empty pass;demo;${EMPTY}
+Right user wrong pass;demo;FooBar
+Correct user;darjusch.schrand@old-rabbits-consulting.de;SeCrEt123!
